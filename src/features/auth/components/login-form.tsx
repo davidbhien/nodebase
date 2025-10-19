@@ -20,6 +20,7 @@ import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import Image from "next/image";
 const loginSchema = z.object({
   email: z.string().email("Invalid email address"),
   password: z.string().min(1, "Password is required"),
@@ -69,6 +70,12 @@ export const LoginForm = () => {
                     type="button"
                     disabled={isPending}
                   >
+                    <Image
+                      src={"/logos/github.svg"}
+                      width={20}
+                      height={20}
+                      alt="github image"
+                    />
                     Continue with Google
                   </Button>
                   <Button
@@ -77,6 +84,12 @@ export const LoginForm = () => {
                     type="button"
                     disabled={isPending}
                   >
+                    <Image
+                      src={"/logos/google.svg"}
+                      width={20}
+                      height={20}
+                      alt="github image"
+                    />
                     Continue with Github
                   </Button>
                 </div>
